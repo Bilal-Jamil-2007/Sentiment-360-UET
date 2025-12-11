@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SENTIMENT 360 - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login_page_style.css">
+</head>
+<body>
+
+<!-- Floating Bubbles -->
+<div class="bubble-1"></div>
+<div class="bubble-2"></div>
+<div class="bubble-3"></div>
+<div class="bubble-4"></div>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <span>🚀 Introducing Sentiment 360 — The smarter way to analyze Public Opinions</span>
+  <a href="#">Read More</a>
+</div>
+
+<!-- Navigation -->
+<header class="navbar">
+  <a href="home_page.html" class="logo">SENTIMENT 360</a>
+
+  <nav class="nav-links">
+    <div class="dropdown">
+      <button class="drop-btn">TOOLS</button>
+      <div class="drop-menu">
+        <a href="#">Social Media Opinions</a>
+        <a href="#">Product Reviews</a>
+        <a href="#">Movies</a>
+        <a href="#">News Articles</a>
+        <a href="#">Economic & Social Discussions</a>
+      </div>
+    </div>
+
+    <a href="about.html" class="nav-item">ABOUT</a>
+    <a href="login_page.html" class="nav-item">LOGIN</a>
+    <a href="login_page.html" class="nav-item signup-btn">SIGN UP</a>
+  </nav>
+</header>
+
+<!-- Main Container -->
+<div class="main-wrapper">
+  <div class="card">
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="active" onclick="switchTab(event, 'login')">LOGIN</button>
+      <button onclick="switchTab(event, 'signup')">SIGNUP</button>
+    </div>
+
+    <!-- Login Form -->
+    <form class="form active" id="login">
+      <h2>Welcome Back</h2>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <a href="#" class="forgot">Forgot Password?</a>
+      <button type="submit" class="btn">LOGIN</button>
+    </form>
+
+    <!-- Signup Form -->
+    <form class="form" id="signup">
+      <h2>Create Account</h2>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <button type="submit" class="btn">SIGN UP</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function switchTab(e, tabName) {
+    const forms = document.querySelectorAll('.form');
+    const buttons = document.querySelectorAll('.tabs button');
+    
+    forms.forEach(form => form.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    document.getElementById(tabName).classList.add('active');
+    e.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
