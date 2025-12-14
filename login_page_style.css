@@ -7,7 +7,7 @@
     }
 
     body{
-        background: radial-gradient(circle at center, #347ef3 0%, #0a0c15 55%);
+        background: radial-gradient(circle at center, #347ef3 -50%, #0a0c15 55%);
         min-height:100vh;
         color:#ffffff;
         overflow-x:hidden;
@@ -410,6 +410,60 @@
         color: #9cb8ff;
     }
 
+    .footer{
+        background: rgba(0,0,0,0.3);
+        padding:60px 6vw;
+        border-top:1px solid rgba(120,150,255,.15);
+        color:white;
+        position: relative;
+        z-index: 10;
+        margin-top: auto;
+    }
+
+    .footer-container{
+        max-width:1200px;
+        margin:auto;
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        gap:40px;
+    }
+
+    .footer-section h3{
+        margin-bottom:15px;
+        font-size:1.2rem;
+        font-weight:700;
+        color:#ffffff;
+    }
+
+    .footer-section p{
+        font-size:0.9rem;
+        line-height:1.5;
+        color:rgba(255,255,255,0.75);
+    }
+
+    .footer a{
+        display:block;
+        margin-bottom:8px;
+        font-size:0.9rem;
+        color:rgba(255,255,255,.7);
+        text-decoration:none;
+        transition:0.25s ease;
+    }
+
+    .footer a:hover{
+        color:#55b0ff;
+    }
+
+    .footer-bottom{
+        margin-top:40px;
+        text-align:center;
+        opacity:.6;
+        font-size:0.85rem;
+        padding-top:20px;
+        border-top:1px solid rgba(255,255,255,0.1);
+    }
+
+
     /* ------------ ANIMATIONS ------------ */
     @keyframes floatBubble1 {
         0%, 100% {
@@ -465,3 +519,37 @@
             max-width: 360px;
         }
     }
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+}
+
+.logo-img{
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo-text{
+  background: linear-gradient(90deg, #ffffff, #b9bbff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fix anchor links blocked by sticky navbar */
+html {
+  scroll-padding-top: 120px;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+}

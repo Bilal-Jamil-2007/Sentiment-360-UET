@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SENTIMENT 360 - FAQs</title>
+  <link rel="stylesheet" href="faqs_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <span>🚀 Introducing Sentiment 360 – The smarter way to analyze Public Opinions</span>
+  <a href="#">Read More</a>
+</div>
+
+<!-- Navigation -->
+<header class="navbar">
+  <a href="home_page.html" class="logo">
+    <img src="logo.png" alt="Sentiment 360 Logo" class="logo-img">
+    <span class="logo-text">SENTIMENT 360</span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="home_page.html" class="nav-item">HOME</a>
+    <div class="dropdown">
+      <button class="drop-btn">TOOLS</button>
+      <div class="drop-menu">
+        <a href="#">Social Media Opinions</a>
+        <a href="#">Product Reviews</a>
+        <a href="#">Movies</a>
+        <a href="#">News Articles</a>
+        <a href="#">Economic & Social Discussions</a>
+      </div>
+    </div>
+
+    <a href="about.html" class="nav-item">ABOUT</a>
+    <a href="login_page.html" class="nav-item signup-btn">LOGIN | SIGN UP</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="faq-hero">
+  <div class="faq-hero-content">
+    <h1>Frequently Asked <span id="gradient-text">Questions</span></h1>
+    <p>Find answers to common questions about Sentiment 360</p>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="faq-container">
+    
+    <!-- FAQ Item 1 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span class="faq-text">What is Sentiment 360?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Sentiment 360 is an advanced sentiment analysis platform that helps you understand public opinions from social media, product reviews, news articles, and more. It uses hybrid AI models trained on millions of samples to provide accurate sentiment insights in real-time.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 2 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span class="faq-text">How accurate is the sentiment analysis?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Our sentiment analysis achieves 99% accuracy thanks to our hybrid models trained on millions of samples. We continuously improve our algorithms using machine learning to ensure the highest level of accuracy for your analyses.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 3 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span class="faq-text">What sources can I analyze?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>You can analyze sentiments from multiple sources including Twitter, Facebook, Instagram, Amazon reviews, Google reviews, movie platforms, news articles, and forum discussions. Our multi-source capability gives you comprehensive insights across all major platforms.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 4 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span class="faq-text">How fast are the results?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Our platform delivers results in just 50 milliseconds on average. With our optimized infrastructure and advanced algorithms, you get instant sentiment analysis without waiting. This means you can make quick decisions based on real-time data.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 5 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span class="faq-text">Is my data secure and private?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes, we take data security very seriously. All data is analyzed locally with proper encryption and security measures. We comply with international data protection standards and never share your data with third parties. Your privacy is our top priority.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 6 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span class="faq-text">Do you offer a free trial?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes! We offer a free trial period so you can explore all features risk-free. No credit card required to get started. You can analyze up to 100 opinions during your trial and experience the full power of Sentiment 360.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 7 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span class="faq-text">Can I export the analysis reports?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Absolutely! You can export detailed sentiment analysis reports in multiple formats including PDF, Excel, and CSV. Our reports include comprehensive visualizations, charts, and actionable insights that you can easily share with your team.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 8 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span class="faq-text">What kind of support do you provide?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>We provide 24/7 customer support through multiple channels including email, live chat, and help documentation. Our support team is always ready to help you with any questions or issues. Premium plans include dedicated account management.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 9 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span class="faq-text">Can I integrate Sentiment 360 with other tools?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes, we offer API access and integrations with popular tools. You can integrate with your existing workflow using our REST API, webhooks, and pre-built connectors. Custom integrations are also available for enterprise customers.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 10 -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span class="faq-text">What languages does Sentiment 360 support?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>We support analysis in 25+ languages including English, Spanish, French, German, Chinese, Japanese, Arabic, and more. Our multilingual models ensure accurate sentiment analysis regardless of the language of your source data.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <h2>Still have questions?</h2>
+  <p>Our support team is here to help. Reach out anytime!</p>
+  <div class="cta-buttons">
+    <a href="mailto:support@sentiment360.com" class="cta-btn primary">Contact Support</a>
+    <a href="home_page.html" class="cta-btn secondary">Back to Home</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>About Sentiment 360</h3>
+      <p>
+        Sentiment 360 helps you analyze public opinions from social media, 
+        product reviews, news articles, and more – all with powerful Hybrid Model.
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <a href="mailto:support@sentiment360.com">support@sentiment360.com</a>
+      <a href="faq.html">FAQs</a>
+      <a href="#">Contact Us</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="home_page.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="home_page.html#features">Features</a>
+      <a href="home_page.html#categories">Categories</a>
+      <a href="#">Dashboard</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Sentiment 360 – All Rights Reserved. <br> Bilal Jamil | Hamna Rizwan
+  </div>
+</footer>
+
+<script>
+  function toggleFAQ(element) {
+    const faqItem = element.parentElement;
+    const isActive = faqItem.classList.contains('active');
+
+    // Close all other FAQs
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.classList.remove('active');
+    });
+
+    // Toggle current FAQ
+    if (!isActive) {
+      faqItem.classList.add('active');
+    }
+  }
+</script>
+
+</body>
+</html>

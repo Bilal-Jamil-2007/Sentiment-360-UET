@@ -17,9 +17,13 @@
 
 <!-- Navigation -->
 <header class="navbar">
-  <a href="home_page.html" class="logo">SENTIMENT 360</a>
+  <a href="home_page.html" class="logo">
+  <img src="logo.png" alt="Sentiment 360 Logo" class="logo-img">
+  <span class="logo-text">SENTIMENT 360</span></a>
+  
 
   <nav class="nav-links">
+    <a href="home_page.html" class="nav-item">HOME</a>
     <div class="dropdown">
       <button class="drop-btn">TOOLS</button>
       <div class="drop-menu">
@@ -30,10 +34,8 @@
         <a href="#">Economic & Social Discussions</a>
       </div>
     </div>
-
     <a href="about.html" class="nav-item">ABOUT</a>
-    <a href="login_page.html" class="nav-item">LOGIN</a>
-    <a href="login_page.html" class="nav-item signup-btn">SIGN UP</a>
+    <a href="login_page.html" class="nav-item signup-btn">LOGIN | SIGN UP</a>
   </nav>
 </header>
 
@@ -49,9 +51,34 @@
     </div>
   </div>
 </main>
+<!-- Stats Bar with Title -->
+<section class="stats-bar">
+  <h2 class="stats-title">Why <span id="gradient-text">Sentiment 360?</span></h2>
+  <div class="stats-content">
+    <div class="stat-item">
+      <div class="stat-value">1M+</div>
+      <div class="stat-text">Opinions Analyzed</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-value">50K+</div>
+      <div class="stat-text">Active Users</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-value">98%</div>
+      <div class="stat-text">Accuracy Rate</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-value">1B+</div>
+      <div class="stat-text">Reviews Access</div>
+    </div>
+  </div>
+</section>
 
 <!-- Features -->
-<section class="features">
+<section class="features" id="features">
     <h2 class="section-title">Features</h2>
     <div class="features-grid">
         <div class="card"><h3>Lightning Fast</h3><p>Get instant sentiment analysis results in seconds.</p></div>
@@ -68,7 +95,7 @@
 </section>
 
 <!-- Categories -->
-<section class="categories">
+<section class="categories" id="categories">
     <h2 class="section-title">Categories</h2>
     <div class="categories-grid">
         <div class="card"><h3>📱 Social Media</h3><p>Twitter, Facebook, Instagram posts and comments.</p></div>
@@ -87,7 +114,7 @@
 <section class="how-it-works" id="how-it-works">
   <div class="how-content">
     <div class="how-text">
-      <h2>How It Works</h2>
+      <h2>How It <span id="gradient-text">Works</span></h2>
       <div class="steps-list">
         <div class="step-item">
           <div class="step-number">1</div>
@@ -130,8 +157,8 @@
 
 <!-- CTA Section -->
 <section class="cta-section">
-  <h2>Ready to Unlock Sentiment Insights?</h2>
-  <button class="cta">Get Started</button>
+  <h2>Start <span id="gradient-text">Saving Time</span> Today</h2>
+  <button class="cta">Try It Free</button>
 </section>
 
 <!-- Footer -->
@@ -149,16 +176,17 @@
     <div class="footer-section">
       <h3>Contact</h3>
       <a href="mailto:support@sentiment360.com">support@sentiment360.com</a>
-      <a href="#">Live Chat</a>
-      <a href="#">Help Center</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="#">Contact Us</a>
     </div>
 
     <div class="footer-section">
       <h3>Quick Links</h3>
-      <a href="#">Home</a>
-      <a href="#">Features</a>
-      <a href="#">Tools</a>
-      <a href="#">Pricing</a>
+      <a href="home_page.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="#features">Features</a>
+      <a href="#categories">Categories</a>
+      <a href="#">DashBoard</a>
     </div>
 
     <div class="footer-section">
@@ -172,7 +200,7 @@
   </div>
 
   <div class="footer-bottom">
-    © 2025 Sentiment 360 — All Rights Reserved.
+    © 2025 Sentiment 360 — All Rights Reserved. <br> Bilal Jamil | Hamna Rizwan
   </div>
 </footer>
 

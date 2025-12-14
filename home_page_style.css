@@ -186,7 +186,7 @@ body:has(.hero){
     justify-content:center;
     align-items:center;
     text-align:center;
-    background: radial-gradient(circle at center, #347ef3 0%, #181c2e 70%);
+    background: radial-gradient(circle at center, #347ef3 -30%, #181c2e 70%);
 }
 
 .hero-inner{
@@ -621,7 +621,7 @@ body:has(.hero){
     text-align:center;
     background:linear-gradient(
         to right,
-        rgba(80,120,255,.15),
+        rgba(5, 29, 107, 0.15),
         transparent
     );
 }
@@ -771,4 +771,210 @@ body:has(.hero){
     .navbar{
         width: calc(100% - 4vw);
     }
+}
+
+#gradient-text {
+  background: linear-gradient(135deg, #2f80ff, #55b0ff);;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+}
+
+.logo-img{
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo-text{
+  background: linear-gradient(90deg, #ffffff, #b9bbff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fix anchor links blocked by sticky navbar */
+html {
+  scroll-padding-top: 120px;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+}
+
+/* Glassmorphic Stats Bar */
+.stats-bar {
+  padding: 50px 6vw;
+  margin: 40px 6vw;
+  background: rgba(20, 30, 70, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(120, 150, 255, 0.15);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(90, 160, 255, 0.05);
+}
+
+.stats-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #ffffff, #b9bbff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.stats-bar::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(90, 160, 255, 0.3), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: cornerGlow 4s ease-in-out infinite;
+}
+
+.stats-bar::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(90, 160, 255, 0.5), rgba(90, 160, 255, 0.15) 50%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatBubble 6s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+.stats-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-item {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffffff, #b9bbff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+}
+
+.stat-text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes cornerGlow {
+  0% {
+    top: -50%;
+    right: -50%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: -30%;
+    right: -30%;
+    opacity: 0.6;
+  }
+}
+
+@keyframes floatBubble {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(-50%) translateY(-30px);
+    opacity: 0.6;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats-bar {
+    padding: 40px 4vw;
+    margin: 30px 4vw;
+  }
+
+  .stats-content {
+    gap: 30px;
+  }
+
+  .stat-item:not(:last-child)::after {
+    right: -15px;
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+  }
+
+  .stat-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-bar {
+    padding: 30px 4vw;
+    margin: 20px 4vw;
+  }
+
+  .stats-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .stat-value {
+    font-size: 1.4rem;
+  }
 }
