@@ -453,17 +453,23 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #2f80ff, #55b0ff);
+    background: #ffffff; /* White background */
     border-radius: 50%;
     text-decoration: none;
-    font-size: 1.2rem;
     transition: all 0.3s ease;
-    color: #ffffff;
+    overflow: hidden;
+}
+
+.social-icons a img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
 .social-icons a:hover{
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(80, 140, 255, 0.4);
+    background: #f0f0f0; /* Slight gray on hover */
 }
 
 /* ---------- FAQ SECTION ---------- */
