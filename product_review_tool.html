@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SENTIMENT 360 - Product Reviews</title>
+  <link rel="stylesheet" href="tools_shared_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="top-banner">
+  <span>🚀 Introducing Sentiment 360 — The smarter way to analyze Public Opinions</span>
+  <a href="#">Read More</a>
+</div>
+
+<header class="navbar">
+  <a href="home_page.html" class="logo">
+    <img src="logo.png" alt="Sentiment 360 Logo" class="logo-img">
+    <span class="logo-text">SENTIMENT 360</span>
+  </a>
+  <nav class="nav-links">
+    <a href="home_page.html" class="nav-item">HOME</a>
+    <div class="dropdown">
+      <button class="drop-btn">TOOLS</button>
+      <div class="drop-menu">
+        <a href="social_media_tool.html">Social Media Opinions</a>
+        <a href="product_reviews_tool.html">Product Reviews</a>
+        <a href="movies_tool.html">Movies</a>
+        <a href="news_tool.html">News Articles</a>
+        <a href="forums_tool.html">Economic & Social Discussions</a>
+      </div>
+    </div>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    <a href="login_page.html" class="nav-item signup-btn">LOGIN | SIGN UP</a>
+  </nav>
+</header>
+
+<section class="analysis-hero">
+  <div class="hero-content">
+    <h1>Product Review <span id="gradient-text">Analysis</span></h1>
+    <p>Aggregate reviews from Amazon, eBay, and more to understand customer satisfaction instantly.</p>
+  </div>
+</section>
+
+<section class="search-section">
+  <div class="search-container">
+    <div class="search-box-wrapper">
+      <form class="analysis-form" onsubmit="event.preventDefault(); startAnalysis();">
+        <div class="input-group">
+          <span class="search-icon">🛍️</span>
+          <input type="text" id="searchInput" placeholder="Enter product URL, ASIN, or name..." required>
+        </div>
+        <div class="platform-selector">
+          <p>Select Marketplaces:</p>
+          <div class="platforms">
+            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">Amazon</span></label>
+            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">eBay</span></label>
+            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">Walmart</span></label>
+            <label class="platform-checkbox"><input type="checkbox"><span class="checkmark">BestBuy</span></label>
+          </div>
+        </div>
+        <button type="submit" class="analyze-btn">Analyze Product</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="results-section" class="results-section hidden">
+  <div class="results-container">
+    <h2 class="section-title">Customer <span id="gradient-text">Feedback</span></h2>
+
+    <div class="result-block">
+      <h3>1. Satisfaction Score</h3>
+      <div class="sentiment-grid">
+        <div class="sentiment-card positive">
+          <div class="sentiment-icon">⭐</div>
+          <div class="sentiment-percent">82%</div>
+          <div class="sentiment-label">Satisfied</div>
+          <div class="progress-bar"><div class="fill" style="width: 82%"></div></div>
+        </div>
+        <div class="sentiment-card negative">
+          <div class="sentiment-icon">⚠️</div>
+          <div class="sentiment-percent">8%</div>
+          <div class="sentiment-label">Dissatisfied</div>
+          <div class="progress-bar"><div class="fill" style="width: 8%"></div></div>
+        </div>
+        <div class="sentiment-card neutral">
+          <div class="sentiment-icon">📦</div>
+          <div class="sentiment-percent">10%</div>
+          <div class="sentiment-label">Neutral</div>
+          <div class="progress-bar"><div class="fill" style="width: 10%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-block">
+      <h3>2. Product Features Mentioned</h3>
+      <div class="keyword-cloud">
+        <span class="tag high">Battery Life <small>(520)</small></span>
+        <span class="tag high">Build Quality <small>(480)</small></span>
+        <span class="tag medium">Shipping Speed <small>(300)</small></span>
+        <span class="tag medium">Value for Money <small>(290)</small></span>
+        <span class="tag low">Packaging <small>(150)</small></span>
+        <span class="tag low">Instructions <small>(90)</small></span>
+      </div>
+    </div>
+
+    <div class="result-block">
+      <h3>3. Recent Reviews</h3>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar pos-avatar">A</div>
+              <div><span class="username">Amazon Customer</span><span class="platform">Amazon</span></div>
+            </div>
+            <span class="badge badge-pos">5 Stars</span>
+          </div>
+          <p class="review-text">"Exceeded my expectations! The battery lasts all day and the build feels premium. Highly recommended."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar neg-avatar">E</div>
+              <div><span class="username">Buyer_123</span><span class="platform">eBay</span></div>
+            </div>
+            <span class="badge badge-neg">1 Star</span>
+          </div>
+          <p class="review-text">"Arrived damaged and the return process is a nightmare. Do not buy from this seller."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar neu-avatar">W</div>
+              <div><span class="username">WalmartShopper</span><span class="platform">Walmart</span></div>
+            </div>
+            <span class="badge badge-neu">3 Stars</span>
+          </div>
+          <p class="review-text">"It's okay for the price. Does the job but feels a bit plasticky compared to the expensive versions."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="download-action">
+       <button class="secondary-btn">Download Report (PDF)</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>About Sentiment 360</h3>
+      <p>Sentiment 360 helps you analyze public opinions from social media, product reviews, news articles, and more.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <a href="mailto:support@sentiment360.com">support@sentiment360.com</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact_us.html">Contact Us</a>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="home_page.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tools.html">Tools</a>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Sentiment 360 — All Rights Reserved. <br> Bilal Jamil | Hamna Rizwan</div>
+</footer>
+
+<script>
+  function startAnalysis() {
+    const btn = document.querySelector('.analyze-btn');
+    const input = document.getElementById('searchInput');
+    const resultsSection = document.getElementById('results-section');
+    const originalText = btn.innerText;
+
+    if(input.value.trim() === "") { alert("Please enter a product link or name."); return; }
+    
+    btn.innerText = "Scanning Reviews...";
+    btn.style.opacity = "0.8";
+    btn.disabled = true;
+    resultsSection.classList.add('hidden');
+
+    setTimeout(() => {
+      btn.innerText = originalText;
+      btn.style.opacity = "1";
+      btn.disabled = false;
+      resultsSection.classList.remove('hidden');
+      resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 1500);
+  }
+</script>
+</body>
+</html>

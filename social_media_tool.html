@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SENTIMENT 360 - Social Media Analysis</title>
+  <link rel="stylesheet" href="tools_shared_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="top-banner">
+  <span>🚀 Introducing Sentiment 360 — The smarter way to analyze Public Opinions</span>
+  <a href="#">Read More</a>
+</div>
+
+<header class="navbar">
+  <a href="home_page.html" class="logo">
+    <img src="logo.png" alt="Sentiment 360 Logo" class="logo-img">
+    <span class="logo-text">SENTIMENT 360</span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="home_page.html" class="nav-item">HOME</a>
+    <div class="dropdown">
+      <button class="drop-btn">TOOLS</button>
+      <div class="drop-menu">
+        <a href="tools.html#social-media">Social Media Opinions</a>
+        <a href="tools.html#product-reviews">Product Reviews</a>
+        <a href="tools.html#movies">Movies</a>
+        <a href="tools.html#news">News Articles</a>
+        <a href="tools.html#forums">Economic & Social Discussions</a>
+      </div>
+    </div>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    <a href="login_page.html" class="nav-item signup-btn">LOGIN | SIGN UP</a>
+  </nav>
+</header>
+
+<section class="analysis-hero">
+  <div class="hero-content">
+    <h1>Social Media <span id="gradient-text">Analysis</span></h1>
+    <p>Track mentions, hashtags, and sentiment across all major platforms in real-time.</p>
+  </div>
+</section>
+
+<section class="search-section">
+  <div class="search-container">
+    
+    <div class="search-box-wrapper">
+      <form class="analysis-form" onsubmit="event.preventDefault(); startAnalysis();">
+        <div class="input-group">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Enter keyword, hashtag, or @username..." required>
+        </div>
+
+        <div class="platform-selector">
+          <p>Select Platforms:</p>
+          <div class="platforms">
+            <label class="platform-checkbox">
+              <input type="checkbox" checked>
+              <span class="checkmark">Twitter / X</span>
+            </label>
+            <label class="platform-checkbox">
+              <input type="checkbox" checked>
+              <span class="checkmark">Facebook</span>
+            </label>
+            <label class="platform-checkbox">
+              <input type="checkbox" checked>
+              <span class="checkmark">Instagram</span>
+            </label>
+            <label class="platform-checkbox">
+              <input type="checkbox">
+              <span class="checkmark">TikTok</span>
+            </label>
+            <label class="platform-checkbox">
+              <input type="checkbox">
+              <span class="checkmark">LinkedIn</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="analyze-btn">Start Analysis</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="results-section" class="results-section hidden">
+  <div class="results-container">
+    <h2 class="section-title">Analysis <span id="gradient-text">Results</span></h2>
+
+    <div class="result-block">
+      <h3>1. Overall Sentiment Distribution</h3>
+      <div class="sentiment-grid">
+        <div class="sentiment-card positive">
+          <div class="sentiment-icon">😊</div>
+          <div class="sentiment-percent">65%</div>
+          <div class="sentiment-label">Positive</div>
+          <div class="progress-bar"><div class="fill" style="width: 65%"></div></div>
+        </div>
+        <div class="sentiment-card negative">
+          <div class="sentiment-icon">😠</div>
+          <div class="sentiment-percent">15%</div>
+          <div class="sentiment-label">Negative</div>
+          <div class="progress-bar"><div class="fill" style="width: 15%"></div></div>
+        </div>
+        <div class="sentiment-card neutral">
+          <div class="sentiment-icon">😐</div>
+          <div class="sentiment-percent">20%</div>
+          <div class="sentiment-label">Neutral</div>
+          <div class="progress-bar"><div class="fill" style="width: 20%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-block">
+      <h3>2. Top Trending Keywords</h3>
+      <div class="keyword-cloud">
+        <span class="tag high">Innovation <small>(942)</small></span>
+        <span class="tag high">User Experience <small>(850)</small></span>
+        <span class="tag medium">Fast Delivery <small>(620)</small></span>
+        <span class="tag medium">Support <small>(510)</small></span>
+        <span class="tag low">Bug Fixes <small>(320)</small></span>
+        <span class="tag low">Pricing <small>(210)</small></span>
+        <span class="tag low">Design <small>(150)</small></span>
+      </div>
+    </div>
+
+    <div class="result-block">
+      <h3>3. Top Representative Opinions</h3>
+      <div class="reviews-grid">
+        
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar pos-avatar">SJ</div>
+              <div>
+                <span class="username">@SarahJenkins</span>
+                <span class="platform">Twitter</span>
+              </div>
+            </div>
+            <span class="badge badge-pos">Positive</span>
+          </div>
+          <p class="review-text">"Absolutely loving the new update! The interface is so much smoother and the dark mode is exactly what I was waiting for. Great job team! 🚀"</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar neg-avatar">MR</div>
+              <div>
+                <span class="username">@MikeRoss_Official</span>
+                <span class="platform">Facebook</span>
+              </div>
+            </div>
+            <span class="badge badge-neg">Negative</span>
+          </div>
+          <p class="review-text">"I'm facing login issues since yesterday. The support team hasn't responded to my ticket yet. Needs urgent fixing."</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar neu-avatar">AD</div>
+              <div>
+                <span class="username">@AlexDev</span>
+                <span class="platform">Reddit</span>
+              </div>
+            </div>
+            <span class="badge badge-neu">Neutral</span>
+          </div>
+          <p class="review-text">"The features are decent, but the price point is a bit high compared to competitors. Will wait for a sale before upgrading."</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="download-action">
+      <button class="secondary-btn">Download Full Report (PDF)</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="info-grid-section">
+  <h2 class="section-title">Why Use This <span id="gradient-text">Tool?</span></h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="card-icon">⚡</div>
+      <h3>Real-Time Tracking</h3>
+      <p>Get instant updates the moment your keyword is mentioned anywhere on the social web.</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">😃</div>
+      <h3>Sentiment Breakdown</h3>
+      <p>Automatically categorize opinions into Positive, Negative, and Neutral with 99% accuracy.</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🌍</div>
+      <h3>Global Reach</h3>
+      <p>Analyze data from over 150 countries and support for 25+ different languages.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Need Deeper Insights?</h2>
+  <p>Upgrade to Premium to unlock historical data and exportable reports.</p>
+  <div class="cta-buttons">
+    <a href="contact_us.html" class="cta-btn primary">Contact Sales</a>
+    <a href="tools.html" class="cta-btn secondary">View Other Tools</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>About Sentiment 360</h3>
+      <p>
+        Sentiment 360 helps you analyze public opinions from social media, 
+        product reviews, news articles, and more — all with powerful Hybrid Model.
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <a href="mailto:support@sentiment360.com">support@sentiment360.com</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact_us.html">Contact Us</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="home_page.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="home_page.html#features">Features</a>
+      <a href="tools.html">Tools</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Sentiment 360 — All Rights Reserved. <br> Bilal Jamil | Hamna Rizwan
+  </div>
+</footer>
+
+<script>
+  function startAnalysis() {
+    const btn = document.querySelector('.analyze-btn');
+    const input = document.getElementById('searchInput');
+    const resultsSection = document.getElementById('results-section');
+    const originalText = btn.innerText;
+
+    if(input.value.trim() === "") {
+        alert("Please enter a keyword first.");
+        return;
+    }
+    
+    // 1. Change Button State
+    btn.innerText = "Analyzing...";
+    btn.style.opacity = "0.8";
+    btn.disabled = true;
+    
+    // Hide results if they were already open (re-running)
+    resultsSection.classList.add('hidden');
+
+    // 2. Simulate Delay (1.5 seconds)
+    setTimeout(() => {
+      // 3. Reset Button
+      btn.innerText = originalText;
+      btn.style.opacity = "1";
+      btn.disabled = false;
+
+      // 4. Show Results
+      resultsSection.classList.remove('hidden');
+      
+      // 5. Smooth Scroll to Results
+      resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    }, 1500);
+  }
+</script>
+
+</body>
+</html>

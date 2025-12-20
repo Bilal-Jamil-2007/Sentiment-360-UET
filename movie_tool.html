@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SENTIMENT 360 - Movie Analysis</title>
+  <link rel="stylesheet" href="tools_shared_style.css" /> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="top-banner">
+  <span>🚀 Introducing Sentiment 360 — The smarter way to analyze Public Opinions</span>
+  <a href="#">Read More</a>
+</div>
+
+<header class="navbar">
+  <a href="home_page.html" class="logo">
+    <img src="logo.png" alt="Sentiment 360 Logo" class="logo-img">
+    <span class="logo-text">SENTIMENT 360</span>
+  </a>
+  <nav class="nav-links">
+    <a href="home_page.html" class="nav-item">HOME</a>
+    <div class="dropdown">
+      <button class="drop-btn">TOOLS</button>
+      <div class="drop-menu">
+        <a href="social_media_tool.html">Social Media Opinions</a>
+        <a href="product_reviews_tool.html">Product Reviews</a>
+        <a href="movies_tool.html">Movies</a>
+        <a href="news_tool.html">News Articles</a>
+        <a href="forums_tool.html">Economic & Social Discussions</a>
+      </div>
+    </div>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    <a href="login_page.html" class="nav-item signup-btn">LOGIN | SIGN UP</a>
+  </nav>
+</header>
+
+<section class="analysis-hero">
+  <div class="hero-content">
+    <h1>Movie & Entertainment <span id="gradient-text">Analysis</span></h1>
+    <p>Analyze audience reactions, critic reviews, and box office predictions in one click.</p>
+  </div>
+</section>
+
+<section class="search-section">
+  <div class="search-container">
+    <div class="search-box-wrapper">
+      <form class="analysis-form" onsubmit="event.preventDefault(); startAnalysis();">
+        <div class="input-group">
+          <span class="search-icon">🎬</span>
+          <input type="text" id="searchInput" placeholder="Enter movie title, TV show, or actor name..." required>
+        </div>
+        <div class="platform-selector">
+          <p>Select Sources:</p>
+          <div class="platforms">
+            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">IMDb</span></label>
+            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">Rotten Tomatoes</span></label>
+            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">Metacritic</span></label>
+            <label class="platform-checkbox"><input type="checkbox"><span class="checkmark">Letterboxd</span></label>
+          </div>
+        </div>
+        <button type="submit" class="analyze-btn">Analyze Movie</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="results-section" class="results-section hidden">
+  <div class="results-container">
+    <h2 class="section-title">Audience <span id="gradient-text">Verdict</span></h2>
+
+    <div class="result-block">
+      <h3>1. Review Distribution</h3>
+      <div class="sentiment-grid">
+        <div class="sentiment-card positive">
+          <div class="sentiment-icon">🍿</div>
+          <div class="sentiment-percent">72%</div>
+          <div class="sentiment-label">Positive (Fresh)</div>
+          <div class="progress-bar"><div class="fill" style="width: 72%"></div></div>
+        </div>
+        <div class="sentiment-card negative">
+          <div class="sentiment-icon">🍅</div>
+          <div class="sentiment-percent">18%</div>
+          <div class="sentiment-label">Negative (Rotten)</div>
+          <div class="progress-bar"><div class="fill" style="width: 18%"></div></div>
+        </div>
+        <div class="sentiment-card neutral">
+          <div class="sentiment-icon">🎥</div>
+          <div class="sentiment-percent">10%</div>
+          <div class="sentiment-label">Mixed</div>
+          <div class="progress-bar"><div class="fill" style="width: 10%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-block">
+      <h3>2. Key Themes</h3>
+      <div class="keyword-cloud">
+        <span class="tag high">Visual Effects <small>(1.2k)</small></span>
+        <span class="tag high">Storyline <small>(980)</small></span>
+        <span class="tag medium">Cinematography <small>(750)</small></span>
+        <span class="tag medium">Soundtrack <small>(600)</small></span>
+        <span class="tag low">Pacing <small>(400)</small></span>
+        <span class="tag low">Ending <small>(320)</small></span>
+      </div>
+    </div>
+
+    <div class="result-block">
+      <h3>3. Top Reviews</h3>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar pos-avatar">MK</div>
+              <div><span class="username">MovieBuff99</span><span class="platform">IMDb</span></div>
+            </div>
+            <span class="badge badge-pos">Positive</span>
+          </div>
+          <p class="review-text">"A cinematic masterpiece! The visuals were stunning and the character arc was handled perfectly. A must-watch."</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar neg-avatar">RT</div>
+              <div><span class="username">Critic_Joe</span><span class="platform">Rotten Tomatoes</span></div>
+            </div>
+            <span class="badge badge-neg">Negative</span>
+          </div>
+          <p class="review-text">"The plot felt dragged out and the dialogue was clunky. Great concept but poor execution."</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar neu-avatar">LB</div>
+              <div><span class="username">Sarah_W</span><span class="platform">Letterboxd</span></div>
+            </div>
+            <span class="badge badge-neu">Mixed</span>
+          </div>
+          <p class="review-text">"It was okay. The first half was strong but the ending didn't land for me. Good popcorn flick though."</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="download-action">
+       <button class="secondary-btn">Download Report (PDF)</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>About Sentiment 360</h3>
+      <p>Sentiment 360 helps you analyze public opinions from social media, product reviews, news articles, and more — all with powerful Hybrid Model.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <a href="mailto:support@sentiment360.com">support@sentiment360.com</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact_us.html">Contact Us</a>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="home_page.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tools.html">Tools</a>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Sentiment 360 — All Rights Reserved. <br> Bilal Jamil | Hamna Rizwan</div>
+</footer>
+
+<script>
+  function startAnalysis() {
+    const btn = document.querySelector('.analyze-btn');
+    const input = document.getElementById('searchInput');
+    const resultsSection = document.getElementById('results-section');
+    const originalText = btn.innerText;
+
+    if(input.value.trim() === "") { alert("Please enter a movie name."); return; }
+    
+    btn.innerText = "Analyzing...";
+    btn.style.opacity = "0.8";
+    btn.disabled = true;
+    resultsSection.classList.add('hidden');
+
+    setTimeout(() => {
+      btn.innerText = originalText;
+      btn.style.opacity = "1";
+      btn.disabled = false;
+      resultsSection.classList.remove('hidden');
+      resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 1500);
+  }
+</script>
+
+</body>
+</html>

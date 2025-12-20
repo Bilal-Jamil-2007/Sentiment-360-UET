@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SENTIMENT 360 - Forum Analysis</title>
+  <link rel="stylesheet" href="tools_shared_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="top-banner">
+  <span>🚀 Introducing Sentiment 360 — The smarter way to analyze Public Opinions</span>
+  <a href="#">Read More</a>
+</div>
+<header class="navbar">
+  <a href="home_page.html" class="logo">
+    <img src="logo.png" alt="Sentiment 360 Logo" class="logo-img">
+    <span class="logo-text">SENTIMENT 360</span>
+  </a>
+  <nav class="nav-links">
+    <a href="home_page.html" class="nav-item">HOME</a>
+    <div class="dropdown">
+      <button class="drop-btn">TOOLS</button>
+      <div class="drop-menu">
+        <a href="social_media_tool.html">Social Media Opinions</a>
+        <a href="product_reviews_tool.html">Product Reviews</a>
+        <a href="movies_tool.html">Movies</a>
+        <a href="news_tool.html">News Articles</a>
+        <a href="forums_tool.html">Economic & Social Discussions</a>
+      </div>
+    </div>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    <a href="login_page.html" class="nav-item signup-btn">LOGIN | SIGN UP</a>
+  </nav>
+</header>
+
+<section class="analysis-hero">
+  <div class="hero-content">
+    <h1>Economic & Social <span id="gradient-text">Discussions</span></h1>
+    <p>Dive deep into community threads, forums, and Reddit to find grassroots opinions and trends.</p>
+  </div>
+</section>
+
+<section class="search-section">
+  <div class="search-container">
+    <div class="search-box-wrapper">
+      <form class="analysis-form" onsubmit="event.preventDefault(); startAnalysis();">
+        <div class="input-group">
+          <span class="search-icon">💬</span>
+          <input type="text" id="searchInput" placeholder="Enter topic (e.g. 'Inflation', 'Remote Work')..." required>
+        </div>
+        <div class="platform-selector">
+          <p>Select Forums:</p>
+          <div class="platforms">
+            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">Reddit</span></label>
+            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">Quora</span></label>
+            <label class="platform-checkbox"><input type="checkbox"><span class="checkmark">StackExchange</span></label>
+            <label class="platform-checkbox"><input type="checkbox"><span class="checkmark">Specialized Forums</span></label>
+          </div>
+        </div>
+        <button type="submit" class="analyze-btn">Analyze Discussions</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="results-section" class="results-section hidden">
+  <div class="results-container">
+    <h2 class="section-title">Community <span id="gradient-text">Sentiment</span></h2>
+
+    <div class="result-block">
+      <h3>1. Discussion Vibe</h3>
+      <div class="sentiment-grid">
+        <div class="sentiment-card positive">
+          <div class="sentiment-icon">🚀</div>
+          <div class="sentiment-percent">55%</div>
+          <div class="sentiment-label">Optimistic</div>
+          <div class="progress-bar"><div class="fill" style="width: 55%"></div></div>
+        </div>
+        <div class="sentiment-card negative">
+          <div class="sentiment-icon">📉</div>
+          <div class="sentiment-percent">25%</div>
+          <div class="sentiment-label">Pessimistic</div>
+          <div class="progress-bar"><div class="fill" style="width: 25%"></div></div>
+        </div>
+        <div class="sentiment-card neutral">
+          <div class="sentiment-icon">🤔</div>
+          <div class="sentiment-percent">20%</div>
+          <div class="sentiment-label">Debating</div>
+          <div class="progress-bar"><div class="fill" style="width: 20%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-block">
+      <h3>2. Hot Topics</h3>
+      <div class="keyword-cloud">
+        <span class="tag high">Cost of Living <small>(850 threads)</small></span>
+        <span class="tag high">Remote Work <small>(720)</small></span>
+        <span class="tag medium">Interest Rates <small>(500)</small></span>
+        <span class="tag medium">Job Market <small>(450)</small></span>
+        <span class="tag low">Freelancing <small>(300)</small></span>
+        <span class="tag low">Side Hustles <small>(280)</small></span>
+      </div>
+    </div>
+
+    <div class="result-block">
+      <h3>3. Top Threads</h3>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar pos-avatar">U1</div>
+              <div><span class="username">u/CryptoKing</span><span class="platform">Reddit</span></div>
+            </div>
+            <span class="badge badge-pos">Trending</span>
+          </div>
+          <p class="review-text">"Despite the inflation reports, I'm seeing a lot of growth in local businesses. People are spending money again!"</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar neg-avatar">U2</div>
+              <div><span class="username">Anon_User</span><span class="platform">EconomyForum</span></div>
+            </div>
+            <span class="badge badge-neg">Concerned</span>
+          </div>
+          <p class="review-text">"Rent prices in the city have skyrocketed. It's becoming unsustainable for the middle class."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="user-info">
+              <div class="avatar neu-avatar">Q</div>
+              <div><span class="username">John Doe</span><span class="platform">Quora</span></div>
+            </div>
+            <span class="badge badge-neu">Question</span>
+          </div>
+          <p class="review-text">"Is it better to invest in real estate right now or wait for the market to cool down? Looking for advice."</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="download-action">
+       <button class="secondary-btn">Download Summary</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>About Sentiment 360</h3>
+      <p>Sentiment 360 helps you analyze public opinions from social media, product reviews, news articles, and more.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <a href="mailto:support@sentiment360.com">support@sentiment360.com</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact_us.html">Contact Us</a>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="home_page.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tools.html">Tools</a>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Sentiment 360 — All Rights Reserved. <br> Bilal Jamil | Hamna Rizwan</div>
+</footer>
+
+<script>
+  function startAnalysis() {
+    const btn = document.querySelector('.analyze-btn');
+    const input = document.getElementById('searchInput');
+    const resultsSection = document.getElementById('results-section');
+    const originalText = btn.innerText;
+
+    if(input.value.trim() === "") { alert("Please enter a topic."); return; }
+    
+    btn.innerText = "Analyzing Threads...";
+    btn.style.opacity = "0.8";
+    btn.disabled = true;
+    resultsSection.classList.add('hidden');
+
+    setTimeout(() => {
+      btn.innerText = originalText;
+      btn.style.opacity = "1";
+      btn.disabled = false;
+      resultsSection.classList.remove('hidden');
+      resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 1500);
+  }
+</script>
+</body>
+</html>
