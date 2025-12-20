@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SENTIMENT 360 - News Analysis</title>
+  <title>SENTIMENT 360 - Forum Analysis</title>
   <link rel="stylesheet" href="tools_shared_style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,8 +38,8 @@
 
 <section class="analysis-hero">
   <div class="hero-content">
-    <h1>News Sentiment <span id="gradient-text">Tracking</span></h1>
-    <p>Monitor global news outlets to track the narrative around events, companies, or political topics.</p>
+    <h1>Economic & Social <span id="gradient-text">Discussions</span></h1>
+    <p>Dive deep into community threads, forums, and Reddit to find grassroots opinions and trends.</p>
   </div>
 </section>
 
@@ -48,19 +48,19 @@
     <div class="search-box-wrapper">
       <form class="analysis-form" onsubmit="event.preventDefault(); startAnalysis();">
         <div class="input-group">
-          <span class="search-icon">📰</span>
-          <input type="text" id="searchInput" placeholder="Enter topic, company, or event..." required>
+          <span class="search-icon">💬</span>
+          <input type="text" id="searchInput" placeholder="Enter topic (e.g. 'Inflation', 'Remote Work')..." required>
         </div>
         <div class="platform-selector">
-          <p>Select Regions/Outlets:</p>
+          <p>Select Forums:</p>
           <div class="platforms">
-            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">Global (CNN, BBC)</span></label>
-            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">Financial (Bloomberg)</span></label>
-            <label class="platform-checkbox"><input type="checkbox"><span class="checkmark">Tech News</span></label>
-            <label class="platform-checkbox"><input type="checkbox"><span class="checkmark">Local News</span></label>
+            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">Reddit</span></label>
+            <label class="platform-checkbox"><input type="checkbox" checked><span class="checkmark">Quora</span></label>
+            <label class="platform-checkbox"><input type="checkbox"><span class="checkmark">StackExchange</span></label>
+            <label class="platform-checkbox"><input type="checkbox"><span class="checkmark">Specialized Forums</span></label>
           </div>
         </div>
-        <button type="submit" class="analyze-btn">Scan News</button>
+        <button type="submit" class="analyze-btn">Analyze Discussions</button>
       </form>
     </div>
   </div>
@@ -68,82 +68,82 @@
 
 <section id="results-section" class="results-section hidden">
   <div class="results-container">
-    <h2 class="section-title">Media <span id="gradient-text">Narrative</span></h2>
+    <h2 class="section-title">Community <span id="gradient-text">Sentiment</span></h2>
 
     <div class="result-block">
-      <h3>1. Coverage Sentiment</h3>
+      <h3>1. Discussion Vibe</h3>
       <div class="sentiment-grid">
         <div class="sentiment-card positive">
-          <div class="sentiment-icon">📈</div>
-          <div class="sentiment-percent">45%</div>
-          <div class="sentiment-label">Positive Coverage</div>
-          <div class="progress-bar"><div class="fill" style="width: 45%"></div></div>
+          <div class="sentiment-icon">🚀</div>
+          <div class="sentiment-percent">55%</div>
+          <div class="sentiment-label">Optimistic</div>
+          <div class="progress-bar"><div class="fill" style="width: 55%"></div></div>
         </div>
         <div class="sentiment-card negative">
           <div class="sentiment-icon">📉</div>
-          <div class="sentiment-percent">30%</div>
-          <div class="sentiment-label">Critical Coverage</div>
-          <div class="progress-bar"><div class="fill" style="width: 30%"></div></div>
-        </div>
-        <div class="sentiment-card neutral">
-          <div class="sentiment-icon">⚖️</div>
           <div class="sentiment-percent">25%</div>
-          <div class="sentiment-label">Neutral / Factual</div>
+          <div class="sentiment-label">Pessimistic</div>
           <div class="progress-bar"><div class="fill" style="width: 25%"></div></div>
         </div>
+        <div class="sentiment-card neutral">
+          <div class="sentiment-icon">🤔</div>
+          <div class="sentiment-percent">20%</div>
+          <div class="sentiment-label">Debating</div>
+          <div class="progress-bar"><div class="fill" style="width: 20%"></div></div>
+        </div>
       </div>
     </div>
 
     <div class="result-block">
-      <h3>2. Trending Topics</h3>
+      <h3>2. Hot Topics</h3>
       <div class="keyword-cloud">
-        <span class="tag high">Economy <small>(300 articles)</small></span>
-        <span class="tag high">Market Shift <small>(250)</small></span>
-        <span class="tag medium">Innovation <small>(180)</small></span>
-        <span class="tag medium">Regulation <small>(140)</small></span>
-        <span class="tag low">CEO Statement <small>(90)</small></span>
-        <span class="tag low">Quarterly Earnings <small>(60)</small></span>
+        <span class="tag high">Cost of Living <small>(850 threads)</small></span>
+        <span class="tag high">Remote Work <small>(720)</small></span>
+        <span class="tag medium">Interest Rates <small>(500)</small></span>
+        <span class="tag medium">Job Market <small>(450)</small></span>
+        <span class="tag low">Freelancing <small>(300)</small></span>
+        <span class="tag low">Side Hustles <small>(280)</small></span>
       </div>
     </div>
 
     <div class="result-block">
-      <h3>3. Top Headlines</h3>
+      <h3>3. Top Threads</h3>
       <div class="reviews-grid">
         <div class="review-card">
           <div class="review-header">
             <div class="user-info">
-              <div class="avatar pos-avatar">B</div>
-              <div><span class="username">Bloomberg</span><span class="platform">Business</span></div>
+              <div class="avatar pos-avatar">U1</div>
+              <div><span class="username">u/CryptoKing</span><span class="platform">Reddit</span></div>
             </div>
-            <span class="badge badge-pos">Bullish</span>
+            <span class="badge badge-pos">Trending</span>
           </div>
-          <p class="review-text">"Tech sector sees unprecedented growth as new AI regulations boost investor confidence in major firms."</p>
+          <p class="review-text">"Despite the inflation reports, I'm seeing a lot of growth in local businesses. People are spending money again!"</p>
         </div>
         <div class="review-card">
           <div class="review-header">
             <div class="user-info">
-              <div class="avatar neg-avatar">R</div>
-              <div><span class="username">Reuters</span><span class="platform">World News</span></div>
+              <div class="avatar neg-avatar">U2</div>
+              <div><span class="username">Anon_User</span><span class="platform">EconomyForum</span></div>
             </div>
-            <span class="badge badge-neg">Critical</span>
+            <span class="badge badge-neg">Concerned</span>
           </div>
-          <p class="review-text">"Supply chain disruptions continue to plague manufacturers, leading to potential delays for the upcoming holiday season."</p>
+          <p class="review-text">"Rent prices in the city have skyrocketed. It's becoming unsustainable for the middle class."</p>
         </div>
         <div class="review-card">
           <div class="review-header">
             <div class="user-info">
-              <div class="avatar neu-avatar">AP</div>
-              <div><span class="username">AP News</span><span class="platform">General</span></div>
+              <div class="avatar neu-avatar">Q</div>
+              <div><span class="username">John Doe</span><span class="platform">Quora</span></div>
             </div>
-            <span class="badge badge-neu">Factual</span>
+            <span class="badge badge-neu">Question</span>
           </div>
-          <p class="review-text">"The Federal Reserve announced interest rate adjustments today. Analysts are split on the long-term impact."</p>
+          <p class="review-text">"Is it better to invest in real estate right now or wait for the market to cool down? Looking for advice."</p>
         </div>
       </div>
     </div>
     
     <div class="download-action">
-       <button class="secondary-btn">Download PDF Report</button>
+       <button class="secondary-btn">Download Summary</button>
     </div>
   </div>
 </section>
@@ -152,26 +152,26 @@
   <h2 class="section-title">Why Use This <span id="gradient-text">Tool?</span></h2>
   <div class="info-grid">
     <div class="info-card">
-      <div class="card-icon">⚖️</div>
-      <h3>Bias Detection</h3>
-      <p>Identify underlying political or corporate bias in coverage across different outlets to get the full picture.</p>
+      <div class="card-icon">🔍</div>
+      <h3>Uncover Niche Trends</h3>
+      <p>Spot emerging trends in specialized communities before they hit mainstream news or social media.</p>
     </div>
     <div class="info-card">
-      <div class="card-icon">🚨</div>
-      <h3>Crisis Alerts</h3>
-      <p>Set up automated triggers to get notified immediately when negative sentiment spikes for your brand.</p>
+      <div class="card-icon">🗣️</div>
+      <h3>Authentic Voices</h3>
+      <p>Analyze unfiltered, anonymous discussions to understand true user pain points and honest opinions.</p>
     </div>
     <div class="info-card">
-      <div class="card-icon">🗺️</div>
-      <h3>Geopolitical Impact</h3>
-      <p>Understand how global events impact local markets and consumer sentiment in real-time.</p>
+      <div class="card-icon">💡</div>
+      <h3>Idea Generation</h3>
+      <p>Discover unmet needs and feature requests directly from power users and early adopters.</p>
     </div>
   </div>
 </section>
 
 <section class="cta-section">
-  <h2>Stay Ahead of the News Cycle</h2>
-  <p>Get instant alerts and comprehensive reports with our Premium plan.</p>
+  <h2>Discover What's Truly Trending</h2>
+  <p>Unlock deep forum insights and historical trend data with our Premium plan.</p>
   <div class="cta-buttons">
     <a href="contact_us.html" class="cta-btn primary">Contact Sales</a>
     <a href="tools.html" class="cta-btn secondary">View Other Tools</a>
@@ -217,7 +217,7 @@
 
     if(input.value.trim() === "") { alert("Please enter a topic."); return; }
     
-    btn.innerText = "Analyzing News...";
+    btn.innerText = "Analyzing Threads...";
     btn.style.opacity = "0.8";
     btn.disabled = true;
     resultsSection.classList.add('hidden');

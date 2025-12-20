@@ -1,0 +1,307 @@
+/* =========================================
+   1. GLOBAL & RESET (Standard Theme)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at bottom, #2e2b5f 0%, #0a0c15 55%);
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+#gradient-text {
+    background: linear-gradient(135deg, #2f80ff, #55b0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hidden {
+    display: none;
+}
+
+/* =========================================
+   2. NAVBAR & HEADER (Copied from Theme)
+   ========================================= */
+.top-banner {
+    width: 100%;
+    background: rgba(20, 40, 80, 0.4);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(120, 150, 255, 0.15);
+    padding: 0.6rem 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.85rem;
+}
+.top-banner a { color: #fff; font-weight: 600; text-decoration: none; }
+
+.navbar{
+    position: sticky;
+    top: 18px;
+    z-index: 2000;
+    margin: 0 auto;
+    width: calc(100% - 8vw);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2.2rem;
+    background: rgba(10, 14, 40, 0.45);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 18px;
+    box-shadow:
+        0 6px 25px rgba(0,0,0,.25),
+        inset 0 0 0 1px rgba(120,140,255,.15);
+    transition: 
+        background .3s ease,
+        box-shadow .35s ease,
+        padding .3s ease;
+}
+
+.navbar:hover{
+    background: rgba(12, 16, 50, 0.55);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+}
+
+.logo-img{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.logo-text{
+    background: linear-gradient(90deg, #ffffff, #b9bbff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Nav Links */
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-item,
+.drop-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 2px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-item:hover,
+.drop-btn:hover{
+    color: #9cb8ff;
+}
+
+/* underline hover */
+.nav-item::after,
+.drop-btn::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-1px;
+    width:0;
+    height:2px;
+    background:#7b61ff;
+    transition:.25s ease;
+}
+
+.nav-item:hover::after,
+.drop-btn:hover::after{
+    width:100%;
+}
+
+/* Signup Button */
+.signup-btn{
+    background: linear-gradient(90deg, #2f80ff, #55b0ff);
+    padding:8px 18px;
+    border-radius:50px;
+}
+
+.signup-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 18px rgba(80,140,255,.4);
+}
+
+/* ---------- Dropdown ---------- */
+.dropdown{
+    position:relative;
+}
+
+.drop-menu{
+    position:absolute;
+    top:42px;
+    left:-12px;
+    background: rgba(15,20,40,.92);
+    backdrop-filter:blur(14px);
+    border-radius:12px;
+    min-width:220px;
+    display:none;
+    flex-direction:column;
+    padding:6px 0;
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
+}
+
+.dropdown:hover .drop-menu{
+    display:flex;
+}
+
+.drop-menu a{
+    padding:12px 18px;
+    color:#ffffff;
+    font-size:.85rem;
+    text-decoration:none;
+}
+
+.drop-menu a:hover{
+    background: linear-gradient(90deg,#2f80ff,#55b0ff);
+}
+
+/* =========================================
+   3. PRICING PAGE SPECIFIC
+   ========================================= */
+.pricing-hero {
+    padding: 80px 6vw 40px;
+    text-align: center;
+}
+.hero-content h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 20px; }
+.hero-content p { font-size: 1.1rem; opacity: 0.8; margin-bottom: 40px; }
+
+/* Toggle Switch */
+.billing-toggle-wrapper { display: flex; align-items: center; justify-content: center; gap: 15px; }
+.switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255,255,255,0.1); border-radius: 34px; transition: .4s; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 4px; bottom: 4px; background-color: white; border-radius: 50%; transition: .4s; }
+input:checked + .slider { background-color: #2f80ff; }
+input:checked + .slider:before { transform: translateX(24px); }
+.save-badge { background: rgba(0, 230, 118, 0.2); color: #00e676; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; }
+
+/* Pricing Cards */
+.pricing-section { padding: 0 6vw 100px; }
+.pricing-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; align-items: center; }
+
+.pricing-card {
+    background: rgba(20, 30, 70, 0.35); backdrop-filter: blur(16px);
+    border: 1px solid rgba(120, 150, 255, 0.15); border-radius: 20px; padding: 40px 30px;
+    text-align: center; position: relative; transition: transform 0.3s ease;
+}
+.pricing-card:hover { transform: translateY(-10px); background: rgba(25, 40, 90, 0.45); }
+
+.pricing-card.popular {
+    background: rgba(30, 40, 90, 0.5); border: 2px solid #55b0ff; padding: 60px 30px; z-index: 1;
+}
+.popular-badge {
+    position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
+    background: linear-gradient(90deg, #2f80ff, #55b0ff); padding: 8px 20px; border-radius: 20px; font-weight: 700; font-size: 0.8rem;
+}
+
+.card-header h3 { font-size: 1.4rem; margin-bottom: 15px; }
+.price-box { display: flex; justify-content: center; align-items: baseline; margin-bottom: 15px; }
+.amount { font-size: 3.5rem; font-weight: 700; }
+.features-list { list-style: none; text-align: left; margin: 30px 0; }
+.features-list li { margin-bottom: 12px; font-size: 0.95rem; display: flex; gap: 10px; opacity: 0.9; }
+.features-list li span { color: #55b0ff; font-weight: bold; }
+
+.plan-btn { display: block; padding: 14px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.plan-btn.primary { background: linear-gradient(90deg, #2f80ff, #55b0ff); color: white; }
+.plan-btn.secondary { border: 1px solid rgba(255,255,255,0.3); color: white; }
+.plan-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(47, 128, 255, 0.4); }
+
+/* =========================================
+   4. CHECKOUT PAGE SPECIFIC
+   ========================================= */
+.checkout-section { padding: 60px 6vw; }
+.checkout-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; }
+
+/* Summary Column */
+.summary-card, .payment-form {
+    background: rgba(20, 30, 70, 0.35); backdrop-filter: blur(16px);
+    border: 1px solid rgba(120, 150, 255, 0.15); border-radius: 18px; padding: 30px;
+}
+
+.selected-plan { display: flex; justify-content: space-between; align-items: center; margin: 20px 0; }
+.plan-info h3 { font-size: 1.2rem; }
+.cycle-badge { font-size: 0.8rem; background: rgba(85, 176, 255, 0.2); padding: 2px 8px; border-radius: 4px; color: #55b0ff; }
+.plan-price { font-size: 1.5rem; font-weight: 700; }
+.divider { height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0; }
+.cost-row { display: flex; justify-content: space-between; margin-bottom: 10px; opacity: 0.8; font-size: 0.95rem; }
+.total-row { display: flex; justify-content: space-between; margin-top: 15px; font-weight: 700; font-size: 1.2rem; }
+.guarantee { margin-top: 25px; background: rgba(0, 230, 118, 0.1); padding: 10px; border-radius: 8px; display: flex; gap: 10px; font-size: 0.85rem; color: #00e676; }
+
+/* Form Styles */
+.payment-form h2, .summary-card h2 { font-size: 1.5rem; margin-bottom: 20px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; font-weight: 500; }
+.form-group input { width: 100%; padding: 12px 16px; border-radius: 10px; background: rgba(10, 15, 30, 0.5); border: 1px solid rgba(120, 150, 255, 0.2); color: white; outline: none; transition: 0.3s; }
+.form-group input:focus { border-color: #55b0ff; box-shadow: 0 0 10px rgba(47, 128, 255, 0.2); }
+
+/* Icons in Input */
+.icon-input { position: relative; }
+.icon-input input { padding-left: 45px; }
+.input-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); opacity: 0.7; }
+
+/* Form Row (Date/CVC) */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* Date Input Styling */
+.date-input {
+    color-scheme: dark; /* Makes the calendar picker dark mode compatible */
+    cursor: pointer;
+}
+
+.pay-btn { width: 100%; padding: 16px; border-radius: 50px; background: linear-gradient(90deg, #00e676, #00c853); color: white; font-weight: 700; font-size: 1.1rem; border: none; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+.pay-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 230, 118, 0.5); }
+
+/* =========================================
+   5. FOOTER (Copied from Theme)
+   ========================================= */
+.footer { background: rgba(0, 0, 0, 0.3); padding: 60px 6vw; border-top: 1px solid rgba(120, 150, 255, .15); margin-top: auto; }
+.footer-container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
+.footer-section h3 { margin-bottom: 15px; font-size: 1.2rem; font-weight: 700; }
+.footer-section p { font-size: 0.9rem; opacity: 0.8; }
+.footer a { display: block; margin-bottom: 8px; font-size: 0.9rem; color: rgba(255, 255, 255, .7); text-decoration: none; }
+.footer a:hover { color: #55b0ff; }
+.footer-bottom { margin-top: 40px; text-align: center; opacity: .6; font-size: 0.85rem; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
+/* Mobile */
+@media (max-width: 900px) {
+    .checkout-container { grid-template-columns: 1fr; }
+    .summary-col { order: -1; }
+    .pricing-card.popular { padding: 40px 30px; transform: none; }
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}

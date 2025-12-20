@@ -771,3 +771,8 @@ html {
         padding: 20px;
     }
 }
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}

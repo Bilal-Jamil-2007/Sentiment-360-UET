@@ -882,3 +882,9 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}

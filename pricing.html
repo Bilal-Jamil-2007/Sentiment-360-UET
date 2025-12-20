@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SENTIMENT 360 - Pricing</title>
+  <link rel="stylesheet" href="pricing_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="top-banner">
+  <span>🚀 Introducing Sentiment 360 — The smarter way to analyze Public Opinions</span>
+  <a href="#">Read More</a>
+</div>
+
+<header class="navbar">
+  <a href="home_page.html" class="logo">
+    <img src="logo.png" alt="Sentiment 360 Logo" class="logo-img">
+    <span class="logo-text">SENTIMENT 360</span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="home_page.html" class="nav-item">HOME</a>
+    <div class="dropdown">
+      <button class="drop-btn">TOOLS</button>
+      <div class="drop-menu">
+        <a href="social_media_tool.html">Social Media Opinions</a>
+        <a href="product_review_tool.html">Product Reviews</a>
+        <a href="movie_tool.html">Movies</a>
+        <a href="news_tool.html">News Articles</a>
+        <a href="forums_tool.html">Economic & Social Discussions</a>
+      </div>
+    </div>
+    <a href="pricing.html" class="nav-item">PRICING</a>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    <a href="login_page.html" class="nav-item signup-btn">LOGIN | SIGN UP</a>
+  </nav>
+</header>
+
+<section class="pricing-hero">
+  <div class="hero-content">
+    <h1>Simple, Transparent <span id="gradient-text">Pricing</span></h1>
+    <p>Choose the plan that fits your analysis needs. Cancel anytime.</p>
+    
+    <div class="billing-toggle-wrapper">
+      <span class="billing-label">Monthly</span>
+      <label class="switch">
+        <input type="checkbox" id="billingToggle" onclick="updateLinks()">
+        <span class="slider round"></span>
+      </label>
+      <span class="billing-label">Yearly <span class="save-badge">Save 20%</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section">
+  <div class="pricing-container">
+    
+    <div class="pricing-card">
+      <div class="card-header">
+        <h3>Starter</h3>
+        <div class="price-box">
+          <span class="currency">$</span>
+          <span class="amount">0</span>
+          <span class="period">/mo</span>
+        </div>
+        <p>For individuals exploring sentiment analysis.</p>
+      </div>
+      <ul class="features-list">
+        <li><span>✓</span> 100 Analysis Credits / month</li>
+        <li><span>✓</span> 1 Social Media Platform</li>
+        <li><span>✓</span> Basic Sentiment (Pos/Neg)</li>
+        <li><span>✓</span> Email Support</li>
+      </ul>
+      <a href="checkout.html?plan=starter&price=0&billing=monthly" class="plan-btn secondary">Get Started</a>
+    </div>
+
+    <div class="pricing-card popular">
+      <div class="popular-badge">MOST POPULAR</div>
+      <div class="card-header">
+        <h3>Professional</h3>
+        <div class="price-box">
+          <span class="currency">$</span>
+          <span class="amount price-monthly">29</span>
+          <span class="amount price-yearly hidden">24</span>
+          <span class="period">/mo</span>
+        </div>
+        <p>For creators and small businesses growing fast.</p>
+      </div>
+      <ul class="features-list">
+        <li><span>✓</span> <strong>Unlimited</strong> Analysis</li>
+        <li><span>✓</span> All Platforms & Tools</li>
+        <li><span>✓</span> Advanced Analytics Dashboard</li>
+        <li><span>✓</span> Export Reports (PDF/CSV)</li>
+        <li><span>✓</span> Priority 24/7 Support</li>
+      </ul>
+      <a href="checkout.html?plan=pro&price=29&billing=monthly" id="btn-pro" class="plan-btn primary">Choose Professional</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="card-header">
+        <h3>Business</h3>
+        <div class="price-box">
+          <span class="currency">$</span>
+          <span class="amount price-monthly">99</span>
+          <span class="amount price-yearly hidden">79</span>
+          <span class="period">/mo</span>
+        </div>
+        <p>For agencies requiring API access and custom solutions.</p>
+      </div>
+      <ul class="features-list">
+        <li><span>✓</span> Everything in Pro</li>
+        <li><span>✓</span> API Access</li>
+        <li><span>✓</span> Team Collaboration (5 Seats)</li>
+        <li><span>✓</span> White-label Reports</li>
+        <li><span>✓</span> Dedicated Account Manager</li>
+      </ul>
+      <a href="checkout.html?plan=business&price=99&billing=monthly" id="btn-biz" class="plan-btn secondary">Choose Business</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>About Sentiment 360</h3>
+      <p>
+        Sentiment 360 helps you analyze public opinions from social media, 
+        product reviews, news articles, and more — all with powerful Hybrid Model.
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <a href="mailto:support@sentiment360.com">support@sentiment360.com</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact_us.html">Contact Us</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="home_page.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tools.html">Tools</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <a href="#"><img src="twitter.jpg" alt="Twitter" class="footer-icon"> Twitter</a>
+      <a href="#"><img src="insta.png" alt="Instagram" class="footer-icon"> Instagram</a>
+      <a href="#"><img src="github.png" alt="GitHub" class="footer-icon"> GitHub</a>
+      <a href="#"><img src="linkedin.png" alt="LinkedIn" class="footer-icon"> LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Sentiment 360 — All Rights Reserved. <br> Bilal Jamil | Hamna Rizwan
+  </div>
+</footer>
+
+<script>
+  function updateLinks() {
+    const isYearly = document.getElementById('billingToggle').checked;
+    const monthlyPrices = document.querySelectorAll('.price-monthly');
+    const yearlyPrices = document.querySelectorAll('.price-yearly');
+    
+    // Toggle Display
+    monthlyPrices.forEach(el => el.style.display = isYearly ? 'none' : 'inline');
+    yearlyPrices.forEach(el => el.style.display = isYearly ? 'inline' : 'none');
+
+    // Update Button Links
+    const btnPro = document.getElementById('btn-pro');
+    const btnBiz = document.getElementById('btn-biz');
+
+    if (isYearly) {
+      // 24 * 12 = 288 | 79 * 12 = 948
+      btnPro.href = "checkout.html?plan=pro&price=288&billing=yearly";
+      btnBiz.href = "checkout.html?plan=business&price=948&billing=yearly";
+    } else {
+      btnPro.href = "checkout.html?plan=pro&price=29&billing=monthly";
+      btnBiz.href = "checkout.html?plan=business&price=99&billing=monthly";
+    }
+  }
+</script>
+
+</body>
+</html>

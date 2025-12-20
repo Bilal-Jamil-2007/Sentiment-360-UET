@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SENTIMENT 360 - Analytics Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="top-banner">
+  <span>🚀 Introducing Sentiment 360 — The smarter way to analyze Public Opinions</span>
+  <a href="#">Read More</a>
+</div>
+
+<header class="navbar">
+  <a href="home_page.html" class="logo">
+    <img src="logo.png" alt="Sentiment 360 Logo" class="logo-img">
+    <span class="logo-text">SENTIMENT 360</span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="home_page.html" class="nav-item">HOME</a>
+    <div class="dropdown">
+      <button class="drop-btn">TOOLS</button>
+      <div class="drop-menu">
+        <a href="social_media_tool.html">Social Media Opinions</a>
+        <a href="product_reviews_tool.html">Product Reviews</a>
+        <a href="movies_tool.html">Movies</a>
+        <a href="news_tool.html">News Articles</a>
+        <a href="forums_tool.html">Economic & Social Discussions</a>
+      </div>
+    </div>
+    <a href="pricing.html" class="nav-item">PRICING</a>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    <a href="login_page.html" class="nav-item signup-btn">LOGIN | SIGN UP</a>
+  </nav>
+</header>
+
+<section class="dash-hero">
+  <div class="hero-content">
+    <h1>Live Analytics <span id="gradient-text">Dashboard</span></h1>
+    <p>Real-time visualization of sentiment data processed via Python & Power BI.</p>
+  </div>
+  
+  <div class="workflow-indicator">
+    <div class="step">
+      <span class="icon">🐍</span> Python Scraper
+    </div>
+    <div class="arrow">➔</div>
+    <div class="step">
+      <span class="icon">📂</span> Data File
+    </div>
+    <div class="arrow">➔</div>
+    <div class="step active">
+      <span class="icon">📊</span> Power BI
+    </div>
+  </div>
+</section>
+
+<section class="dashboard-section">
+  <div class="dashboard-container">
+    
+    <div class="dash-controls">
+      <div class="status-indicator">
+        <span class="dot live"></span>
+        <span>Data Source: <strong>Not Connected</strong></span>
+      </div>
+      <div class="control-actions">
+        <span class="last-updated">Last Updated: Just now</span>
+        <button class="refresh-btn" onclick="refreshDashboard()">🔄 Refresh Data</button>
+        <button class="export-btn">⬇ Export PDF</button>
+      </div>
+    </div>
+
+    <div class="powerbi-wrapper">
+      <iframe 
+        title="Sentiment Dashboard" 
+        class="powerbi-frame"
+        src="https://app.powerbi.com/reportEmbed?reportId=fake-id-placeholder&autoAuth=true&ctid=fake-id" 
+        frameborder="0" 
+        allowFullScreen="true">
+      </iframe>
+
+      <div class="placeholder-overlay">
+        <h3>Power BI Report Loading...</h3>
+        <p>Ensure your Python script has updated the source file.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>About Sentiment 360</h3>
+      <p>
+        Sentiment 360 helps you analyze public opinions from social media, 
+        product reviews, news articles, and more.
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <a href="mailto:support@sentiment360.com">support@sentiment360.com</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact_us.html">Contact Us</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="home_page.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tools.html">Tools</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <a href="#"><img src="twitter.jpg" alt="Twitter" class="footer-icon"> Twitter</a>
+      <a href="#"><img src="insta.png" alt="Instagram" class="footer-icon"> Instagram</a>
+      <a href="#"><img src="github.png" alt="GitHub" class="footer-icon"> GitHub</a>
+      <a href="#"><img src="linkedin.png" alt="LinkedIn" class="footer-icon"> LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Sentiment 360 — All Rights Reserved. <br> Bilal Jamil | Hamna Rizwan
+  </div>
+</footer>
+
+<script>
+  function refreshDashboard() {
+    const btn = document.querySelector('.refresh-btn');
+    const iframe = document.querySelector('.powerbi-frame');
+    
+    btn.innerHTML = "⏳ Syncing Python...";
+    btn.disabled = true;
+
+    // Simulate Python script run time
+    setTimeout(() => {
+        // Reload the iframe to fetch new data visual
+        iframe.src = iframe.src; 
+        
+        btn.innerHTML = "✅ Updated";
+        document.querySelector('.last-updated').innerText = "Last Updated: Just now";
+        
+        setTimeout(() => {
+            btn.innerHTML = "🔄 Refresh Data";
+            btn.disabled = false;
+        }, 2000);
+    }, 2000);
+  }
+</script>
+
+</body>
+</html>

@@ -954,3 +954,9 @@ html {
     width: 100%;
   }
 }
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}

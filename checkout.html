@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SENTIMENT 360 - Checkout</title>
+  <link rel="stylesheet" href="pricing_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="top-banner">
+  <span>🚀 Introducing Sentiment 360 — The smarter way to analyze Public Opinions</span>
+  <a href="#">Read More</a>
+</div>
+
+<header class="navbar">
+  <a href="home_page.html" class="logo">
+    <img src="logo.png" alt="Sentiment 360 Logo" class="logo-img">
+    <span class="logo-text">SENTIMENT 360</span>
+  </a>
+  <nav class="nav-links">
+    <a href="home_page.html" class="nav-item">HOME</a>
+    <div class="dropdown">
+      <button class="drop-btn">TOOLS</button>
+      <div class="drop-menu">
+        <a href="social_media_tool.html">Social Media Opinions</a>
+        <a href="product_review_tool.html">Product Reviews</a>
+        <a href="movie_tool.html">Movies</a>
+        <a href="news_tool.html">News Articles</a>
+        <a href="forums_tool.html">Economic & Social Discussions</a>
+      </div>
+    </div>
+    <a href="pricing.html" class="nav-item">PRICING</a>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    <a href="login_page.html" class="nav-item signup-btn">LOGIN | SIGN UP</a>
+  </nav>
+</header>
+
+<section class="checkout-section">
+  <div class="checkout-container">
+    
+    <div class="checkout-col summary-col">
+      <div class="summary-card">
+        <h2>Order <span id="gradient-text">Summary</span></h2>
+        
+        <div class="selected-plan">
+          <div class="plan-info">
+            <h3 id="planName">Loading...</h3>
+            <span id="billingCycle" class="cycle-badge">Monthly</span>
+          </div>
+          <div class="plan-price" id="planPrice">...</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="cost-row">
+          <span>Subtotal</span>
+          <span id="subtotal">...</span>
+        </div>
+        <div class="cost-row">
+          <span>Tax (0%)</span>
+          <span>$0.00</span>
+        </div>
+        
+        <div class="total-row">
+          <span>Total Due</span>
+          <span id="total">...</span>
+        </div>
+
+        <div class="guarantee">
+          <span class="icon">🛡️</span>
+          <p>Secure 256-bit SSL Encrypted payment.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkout-col payment-col">
+      <form class="payment-form" onsubmit="event.preventDefault(); alert('Payment Successful!'); window.location.href='home_page.html';">
+        <h2>Payment <span id="gradient-text">Details</span></h2>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>Cardholder Name</label>
+          <input type="text" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label>Card Number</label>
+          <div class="icon-input">
+            <span class="input-icon">💳</span>
+            <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Expiry Date</label>
+            <input type="month" id="expiryDate" required class="date-input">
+          </div>
+          
+          <div class="form-group">
+            <label>CVC / CVV</label>
+            <div class="icon-input">
+              <span class="input-icon">🔒</span>
+              <input type="text" placeholder="123" maxlength="4" required>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="pay-btn">Complete Payment</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>About Sentiment 360</h3>
+      <p>
+        Sentiment 360 helps you analyze public opinions from social media, 
+        product reviews, news articles, and more — all with powerful Hybrid Model.
+      </p>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <a href="mailto:support@sentiment360.com">support@sentiment360.com</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact_us.html">Contact Us</a>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="home_page.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tools.html">Tools</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <a href="#"><img src="twitter.jpg" alt="Twitter" class="footer-icon"> Twitter</a>
+      <a href="#"><img src="insta.png" alt="Instagram" class="footer-icon"> Instagram</a>
+      <a href="#"><img src="github.png" alt="GitHub" class="footer-icon"> GitHub</a>
+      <a href="#"><img src="linkedin.png" alt="LinkedIn" class="footer-icon"> LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Sentiment 360 — All Rights Reserved. <br> Bilal Jamil | Hamna Rizwan
+  </div>
+</footer>
+
+<script>
+  window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get('plan') || 'Select a Plan';
+    const price = params.get('price') || '0';
+    const billing = params.get('billing') || 'monthly';
+
+    document.getElementById('planName').textContent = plan.charAt(0).toUpperCase() + plan.slice(1) + " Plan";
+    document.getElementById('billingCycle').textContent = billing.charAt(0).toUpperCase() + billing.slice(1);
+    
+    const formattedPrice = "$" + price + ".00";
+    document.getElementById('planPrice').textContent = formattedPrice;
+    document.getElementById('subtotal').textContent = formattedPrice;
+    document.getElementById('total').textContent = formattedPrice;
+  };
+</script>
+
+</body>
+</html>
