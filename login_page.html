@@ -30,13 +30,164 @@
   <nav class="nav-links">
     <a href="home_page.html" class="nav-item">HOME</a>
     <div class="dropdown">
-      <button class="drop-btn">TOOLS</button>
+      <a href="tools.html" class="drop-btn">TOOLS</a>
       <div class="drop-menu">
-        <a href="tools.html#social-media">Social Media Opinions</a>
-        <a href="tools.html#product-reviews">Product Reviews</a>
-        <a href="tools.html#movies">Movies</a>
-        <a href="tools.html#news">News Articles</a>
-        <a href="tools.html#forums">Economic & Social Discussions</a>
+      <a href="social_media_tool.html">Social Media Opinions</a>
+      <a href="product_review_tool.html">Product Reviews</a>
+      <a href="movies_tool.html">Movies</a>
+      <a href="news_tool.html">News Articles</a>
+      <a href="forums_tool.html">Economic & Social Discussions</a>
+      <a href="text_analysis_tool.html" class="glow-link">✨ Manual Text Analysis</a>
+      </div>
+    </div>
+    <a href="pricing.html" class="nav-item">PRICING</a>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    <a href="login_page.html" class="nav-item signup-btn">LOGIN | SIGN UP</a>
+  </nav>
+</header>
+
+<!-- Main Container -->
+<div class="main-wrapper">
+  <div class="card">
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="active" onclick="switchTab(event, 'login')">LOGIN</button>
+      <button onclick="switchTab(event, 'signup')">SIGNUP</button>
+    </div>
+
+    <!-- Login Form -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SENTIMENT 360 - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login_page_style.css">
+  <style>
+    /* Welcome Screen Styles */
+    .welcome-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 12, 21, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .welcome-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .welcome-content {
+      text-align: center;
+      color: white;
+      animation: welcomeScale 0.8s ease-out;
+    }
+
+    @keyframes welcomeScale {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .welcome-content h1 {
+      font-size: 72px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #2f80ff, #55b0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -2px;
+    }
+
+    .welcome-content p {
+      font-size: 28px;
+      color: #b9bbff;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .welcome-content .user-name {
+      font-weight: 700;
+      color: #55b0ff;
+    }
+
+    .welcome-content .subtitle {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+
+    .welcome-icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Fade out form during login */
+    .card.fade-out {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating Bubbles -->
+<div class="bubble-1"></div>
+<div class="bubble-2"></div>
+<div class="bubble-3"></div>
+<div class="bubble-4"></div>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <span>🚀 Introducing Sentiment 360 – The smarter way to analyze Public Opinions</span>
+  <a href="#">Read More</a>
+</div>
+
+<!-- Navigation -->
+<header class="navbar">
+  <a href="home_page.html" class="logo">
+  <img src="logo.png" alt="Sentiment 360 Logo" class="logo-img">
+  <span class="logo-text">SENTIMENT 360</span></a>
+
+  <nav class="nav-links">
+    <a href="home_page.html" class="nav-item">HOME</a>
+    <div class="dropdown">
+      <a href="tools.html" class="drop-btn">TOOLS</a>
+      <div class="drop-menu">
+      <a href="social_media_tool.html">Social Media Opinions</a>
+      <a href="product_review_tool.html">Product Reviews</a>
+      <a href="movies_tool.html">Movies</a>
+      <a href="news_tool.html">News Articles</a>
+      <a href="forums_tool.html">Economic & Social Discussions</a>
+      <a href="text_analysis_tool.html" class="glow-link">✨ Manual Text Analysis</a>
       </div>
     </div>
     <a href="pricing.html" class="nav-item">PRICING</a>
@@ -57,11 +208,140 @@
     <!-- Login Form -->
     <form class="form active" id="login">
       <h2>Welcome Back</h2>
-      <input type="email" placeholder="Email" required>
+      <input type="email" placeholder="Email" id="loginEmail" required>
       <input type="password" placeholder="Password" required>
       <a href="#" class="forgot">Forgot Password?</a>
       <button type="submit" class="btn">LOGIN</button>
     </form>
+
+    <!-- Signup Form -->
+    <form class="form" id="signup">
+      <h2>Create Account</h2>
+      <input type="text" placeholder="Full Name" id="signupName" required>
+      <input type="email" placeholder="Email" id="signupEmail" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <button type="submit" class="btn">SIGN UP</button>
+    </form>
+  </div>
+</div>
+
+<!-- Welcome Screen -->
+<div class="welcome-overlay" id="welcomeOverlay">
+  <div class="welcome-content">
+    <div class="welcome-icon">👋</div>
+    <h1>Welcome</h1>
+    <p>to <span class="user-name">Sentiment 360</span></p>
+    <div class="subtitle" id="welcomeSubtitle">Redirecting you to Home Page...</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>About Sentiment 360</h3>
+      <p>
+        Sentiment 360 helps you analyze public opinions from social media, 
+        product reviews, news articles, and more – all with powerful Hybrid Model.
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <a href="mailto:support@sentiment360.com">support@sentiment360.com</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact_us.html">Contact Us</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="home_page.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="home_page.html#features">Features</a>
+      <a href="home_page.html#categories">Categories</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <a href="#"><img src="twitter.jpg" alt="Twitter" class="footer-icon"> Twitter</a>
+      <a href="#"><img src="insta.png" alt="Instagram" class="footer-icon"> Instagram</a>
+      <a href="#"><img src="github.png" alt="GitHub" class="footer-icon"> GitHub</a>
+      <a href="#"><img src="linkedin.png" alt="LinkedIn" class="footer-icon"> LinkedIn</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Sentiment 360 – All Rights Reserved. <br> Bilal Jamil | Hamna Rizwan
+  </div>
+</footer>
+
+<script>
+  const loginForm = document.getElementById('login');
+  const signupForm = document.getElementById('signup');
+  const welcomeOverlay = document.getElementById('welcomeOverlay');
+  const card = document.querySelector('.card');
+  const welcomeSubtitle = document.getElementById('welcomeSubtitle');
+
+  // Login Form Submission
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const userName = email.split('@')[0];
+    
+    triggerWelcome(userName);
+  });
+
+  // Signup Form Submission
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fullName = document.getElementById('signupName').value;
+    const firstName = fullName.split(' ')[0];
+    
+    triggerWelcome(firstName);
+  });
+
+  function triggerWelcome(userName) {
+    // Fade out the card
+    card.classList.add('fade-out');
+
+    // Show welcome screen after card fades
+    setTimeout(() => {
+      welcomeOverlay.classList.add('show');
+      // Update subtitle with countdown
+      let countdown = 3;
+      welcomeSubtitle.textContent = `Redirecting in ${countdown}s...`;
+      
+      const countdownInterval = setInterval(() => {
+        countdown--;
+        if (countdown > 0) {
+          welcomeSubtitle.textContent = `Redirecting in ${countdown}s...`;
+        } else {
+          clearInterval(countdownInterval);
+          // Redirect to home page
+          window.location.href = 'home_page.html';
+        }
+      }, 1000);
+    }, 300);
+  }
+
+  function switchTab(e, tabName) {
+    const forms = document.querySelectorAll('.form');
+    const buttons = document.querySelectorAll('.tabs button');
+    
+    forms.forEach(form => form.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    document.getElementById(tabName).classList.add('active');
+    e.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
 
     <!-- Signup Form -->
     <form class="form" id="signup">
